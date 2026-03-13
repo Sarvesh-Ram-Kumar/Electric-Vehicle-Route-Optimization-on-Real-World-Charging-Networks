@@ -1,0 +1,2 @@
+# Electric-Vehicle-Route-Optimization-on-Real-World-Charging-Networks
+The project evaluates classical graph-based algorithms and reinforcement learning approaches for long-distance EV route planning with charging station considerations.  The experiments compare baseline routing methods with several reinforcement learning approaches, including a Primal–Dual Q-learning framework with optimization improvements.
