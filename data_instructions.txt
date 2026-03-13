@@ -1,0 +1,75 @@
+DATA INSTRUCTIONS
+=================
+
+This project uses publicly available EV charging station data.
+
+Required Dataset
+----------------
+File name expected by the code:
+
+ev-charging-station.csv
+
+This file should be placed in the same directory as the notebook before running the code.
+
+Dataset Source
+--------------
+The EV charging station dataset can be obtained from publicly available sources such as:
+
+U.S. Department of Energy Alternative Fuels Data Center (AFDC)
+
+https://afdc.energy.gov/fuels/electricity_locations.html
+
+Download the EV charging station dataset in CSV format and rename the file as:
+
+ev-charging-station.csv
+
+
+Required Columns
+----------------
+The following columns are used by the code:
+
+Latitude
+Longitude
+EV Level2 EVSE Num
+EV Connector Types
+
+Description:
+
+Latitude  
+Geographic latitude of the charging station.
+
+Longitude  
+Geographic longitude of the charging station.
+
+EV Level2 EVSE Num  
+Number of Level 2 charging ports available at the station.
+
+EV Connector Types  
+Connector types supported by the charging station (e.g., J1772).
+
+
+Data Preprocessing
+------------------
+The code automatically performs the following preprocessing steps:
+
+1. Removes rows with missing latitude, longitude, charger count, or connector information.
+2. Converts charger counts to integer format.
+3. Parses connector types into sets.
+4. Clusters nearby charging stations using DBSCAN with an approximate radius of 20 km.
+5. Aggregates clustered stations into a single representative node for graph construction.
+
+
+Graph Construction
+------------------
+After preprocessing:
+
+• Each clustered station becomes a node in the routing graph.
+• Nodes are connected to their k-nearest neighbors (k = 5).
+• Edge weights are computed based on geographic distance and charger availability.
+
+
+Important Note
+--------------
+The dataset itself is not redistributed in this repository due to licensing considerations.
+
+Users should download the dataset directly from the original public source and place it in the project directory before running the notebook.

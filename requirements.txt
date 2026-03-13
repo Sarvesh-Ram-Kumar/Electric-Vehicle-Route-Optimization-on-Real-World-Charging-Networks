@@ -1,0 +1,11 @@
+pandas
+numpy
+networkx
+scikit-learn
+geopy
+matplotlib
+torch
+openrouteservice
+cartopy
+jupyter
+notebook
